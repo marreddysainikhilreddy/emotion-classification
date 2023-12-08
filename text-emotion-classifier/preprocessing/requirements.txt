@@ -1,0 +1,11 @@
+comet_ml
+emoji
+torch
+matplotlib
+pandas
+scikit-learn
+nltk
+datasets
+transformers
+huggingface_hub
+transformers[torch]
