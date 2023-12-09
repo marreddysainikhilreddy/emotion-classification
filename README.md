@@ -3,11 +3,11 @@
 Welcome to the repository for our group project for CSCI-567, USC's Machine Learning graduate course. This repo contains a variety of transformer-based models for emotion classification in text and convolutional neural network (CNN) models tailored for facial emotion classification in images.
 
 ## Navigating the Repo:
-- This repo has two main folders: `image-emotion-classification` and `text-emotion-classification`. Each folder contains the code for the respective model type. `image-emotion-classification` holds our CNN-based models, and `text-emotion-classification` holds our transformer-based models. Within each folder are a variety of subfolders or ipynb files containing the code for the different models we trained. Below is a list describing the models in each of the main folders:
+- This repo has two main folders: `image-emotion-classifier` and `text-emotion-classifier`. Each folder contains the code for the respective model type. `image-emotion-classifier` folder holds our CNN-based models, and `text-emotion-classifier` folder holds our transformer-based models. Within each folder are a variety of subfolders or ipynb files containing the code for the different models we trained. Below is a list describing the models in each of the main folders:
 ### image-emotion-classification:
-- `cnn-architecture`: [Blank]
-- `resnet50`: [Blank]
-- `vgg16`: [Blank]
+- `cnn-architecture`: Contains the code for a custom CNN architecture, which was trained on the fer2013 dataset.
+- `resnet50`: Contains the code for different variations of ResNet50 + custom layers which were trained on fer2013 dataset.
+- `vgg`: Contains code for Fine Tuned VGG16 + custom layers in vgg16_v1.ipynb, Fine Tuned VGG16 + custom layers + MTCNN in vgg16_v1_mtcnn.ipynb, Vgg19 + custom layers in vgg19_fer.ipynb
 
 ### text-emotion-classification:
 - `cleaning_augmentation`: This folder contains the code for the data cleaning and augmentation process we used for the text data before training a DistilBERT model.
@@ -21,6 +21,12 @@ Welcome to the repository for our group project for CSCI-567, USC's Machine Lear
 pip install -r requirements.txt
 ```
 > Note: Upgrade 'pip' before installing the packages.
+
+## Image Classifier
+- In order to run code in Image classifier, install anaconda and create a virtual environment in anaconda terminal or create a virtual environment and run
+- pip install jupyter-notebook
+- pip install -r requirements.txt (This should install all the necessary packages required to run the ipynb notebooks)
+- 
 
 ## Tracking Results:
 - We are using Comet ML to track our experiments. If you want to track model settings and training/testing results, create an account on Comet ML and get your API key. You can find instructions on how to do that [here](https://www.comet.com/docs/v2/guides/getting-started/quickstart/).
