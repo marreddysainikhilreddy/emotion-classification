@@ -28,9 +28,10 @@ pip install -r requirements.txt
 - To run code in the Image classifier, install Anaconda and create a virtual environment in the Anaconda terminal, or create a virtual environment and run
 - pip install jupyter-notebook
 - pip install -r requirements.txt (This should install all the necessary packages required to run the ipynb notebooks)
-- To reproduce the results in the ipynb notebooks, try running the code from start to end.
+- To reproduce the results in the ipynb notebooks, Download the dataset used in this project (https://drive.google.com/file/d/1uyCOBCyoVyBsKcC5df26_qfC8roIatd3/view?usp=sharing) adjust the directories mentioned in the code and run the code from start to end.
 - To run the comet code in the image classifier section. Create a .env file inside the image-classifier folder and define these variables COMET_API_KEY, COMET_PROJECT_NAME, COMET_WORKSPACE_NAME (A comet ml account is required to get these)
 - If just the results need to be reproduced, ignore the comet ml code sections and run the remaining code
+- Link for the datasets used for image emotion classifier (https://drive.google.com/file/d/1uyCOBCyoVyBsKcC5df26_qfC8roIatd3/view?usp=sharing)
 
 ## Tracking Results:
 - We are using Comet ML to track our experiments. If you want to track model settings and training/testing results, create an account on Comet ML and get your API key. You can find instructions on how to do that [here](https://www.comet.com/docs/v2/guides/getting-started/quickstart/).
