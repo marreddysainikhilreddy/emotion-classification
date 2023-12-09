@@ -14,7 +14,7 @@ Welcome to the repository for our group project for CSCI-567, USC's Machine Lear
 - `roberta-base`: This ipynb file contains the pre-ran code for training and testing a DistilBERT model on the text data. This is our highest-performing transformer model. It shows the full preprocessing, training, testing, and result visualization of a DistilBERT model for our task. 
 - `hybrid_models`: This folder contains the hybrid models we trained, which include the following files:
     - `bi-lstm_attention_roberta`: This ipynb file contains the pre-ran code for training and testing a hybrid model that combines a Bi-LSTM with attention layers with the RoBERTa model.
-    - `transformer_exploration_finetune.ipynb`: This ipynb file contains the code for finetuning trained model with [Self-Reported (SR) Emotion Dataset](https://github.com/EmotionDetection/Self-Reported-SR-emotion-dataset) (need to download the dataset, and prepare your trained model for finetuning.)
+- `alternate_dataset_checkpoint_model`: This ipynb file contains the code for finetuning trained model with [Self-Reported (SR) Emotion Dataset](https://github.com/EmotionDetection/Self-Reported-SR-emotion-dataset) (need to download the dataset, and prepare your trained model for finetuning.)
 
 
 ## How to Install Python Packages:
