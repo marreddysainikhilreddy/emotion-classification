@@ -12,7 +12,8 @@ Welcome to the repository for our group project for CSCI-567, USC's Machine Lear
 ### text-emotion-classification:
 - `cleaning_augmentation`: This folder contains the code for the data cleaning and augmentation process we used for the text data before training a DistilBERT model.
 - `roberta-base`: This ipynb file contains the pre-ran code for training and testing a DistilBERT model on the text data. This is our highest-performing transformer model. It shows the full preprocessing, training, testing, and result visualization of a DistilBERT model for our task. 
-- [hybrid and any other models]
+- `hybrid_models`: This folder contains the hybrid models we trained, which include the following files:
+    - `bi-lstm_attention_roberta`: This ipynb file contains the pre-ran code for training and testing a hybrid model that combines a Bi-LSTM with attention layers with the RoBERTa model.
 
 ## How to Install Python Packages:
 - For code using a `requirements.txt` file, run the following in a command prompt in the directory where you cloned this repo:
