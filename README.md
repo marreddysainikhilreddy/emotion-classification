@@ -1,90 +1,66 @@
+
 # Emotion Classification in Relation to Mental Health 
 
-Welcome to the repository for our group project for CSCI-567, USC's Machine Learning graduate course. This repo contains a variety of transformer-based models for emotion classification in text and convolutional neural network (CNN) models tailored for facial emotion classification in images.
+Welcome to our project repository for CSCI-567, the Machine Learning graduate course at USC. This repository features advanced models for facial emotion classification in images and emotion classification in text. Dive into our [final report](final_project_report.pdf) for a detailed exploration of our project, including experiments and results.
+> **Note:** For tracking experiments, we use Comet ML. Follow the instructions [here](https://www.comet.com/docs/v2/guides/getting-started/quickstart/) to get an API key. If not using Comet ML, ignore related code sections.
 
-## Navigating the Repo:
-- This repo has two main folders: `image-emotion-classifier` and `text-emotion-classifier`. Each folder contains the code for the respective model type. `image-emotion-classifier` folder holds our CNN-based models, and `text-emotion-classifier` folder holds our transformer-based models. Within each folder are a variety of subfolders or ipynb files containing the code for the different models we trained. Below is a list describing the models in each of the main folders:
-### image-emotion-classification:
-- `cnn-architecture`: Contains the code for a custom CNN architecture, which was trained on the fer2013 dataset.
-- `resnet50`: Contains the code for different variations of ResNet50 + custom layers which were trained on fer2013 dataset.
-- `vgg`: Contains code for Fine Tuned VGG16 + custom layers in vgg16_v1.ipynb, Fine Tuned VGG16 + custom layers + MTCNN in vgg16_v1_mtcnn.ipynb, Vgg19 + custom layers in vgg19_fer.ipynb
+## Repository Overview:
 
-### text-emotion-classification:
-- `cleaning_augmentation`: This folder contains the code for the data cleaning and augmentation process we used for the text data before training a DistilBERT model.
-- `roberta-base`: This ipynb file contains the pre-ran code for training and testing a DistilBERT model on the text data. This is our highest-performing transformer model. It shows the full preprocessing, training, testing, and result visualization of a DistilBERT model for our task. 
-- `hybrid_models`: This folder contains the hybrid models we trained, which include the following files:
-    - `bi-lstm_attention_roberta`: This ipynb file contains the pre-ran code for training and testing a hybrid model that combines a Bi-LSTM with attention layers with the RoBERTa model.
-- `alternate_dataset_checkpoint_model`: This ipynb file contains the code for finetuning trained model with [Self-Reported (SR) Emotion Dataset](https://github.com/EmotionDetection/Self-Reported-SR-emotion-dataset) (need to download the dataset, and prepare your trained model for finetuning.)
+### Image Emotion Classifier
+- **Folders:**
+  - `image-emotion-classifier`: CNN-based models for image emotion classification.
+    - `cnn-architecture`: Custom CNN models trained on the fer2013 dataset.
+    - `resnet50`: Variations of ResNet50 with custom layers, also trained on fer2013.
+    - `vgg`: VGG16 and VGG19 models with fine-tuning and custom layers. Specific files include `vgg16_v1.ipynb`, `vgg16_v1_mtcnn.ipynb`, and `vgg19_fer.ipynb`.
 
+### Text Emotion Classifier
+- **Folders:**
+  - `text-emotion-classifier`: Transformer-based models for text emotion classification.
+    - `cleaning_augmentation`: Data cleaning and augmentation code for text dataset.
+    - `roberta-base`: Our high-performing RoBERTa model with complete training and testing code.
+    - `hybrid_models`: Combining Bi-LSTM with attention layers and transformer models.
+      - `bi-lstm_attention_roberta` and `bi-lstm_attention_distilbert`.
+    - `alternate_dataset_checkpoint_model`: Finetuning models with the [Self-Reported Emotion](https://github.com/EmotionDetection/Self-Reported-SR-emotion-dataset) dataset.
+> **Note**: All models besides `alternate_dataset_checkpoint_model` use the [GoEmotions](https://huggingface.co/datasets/go_emotions) dataset.
 
-## How to Install Python Packages:
-- For code using a `requirements.txt` file, run the following in a command prompt in the directory where you cloned this repo:
-```bash
-pip install -r requirements.txt
-```
-> Note: Upgrade 'pip' before installing the packages.
+## Getting Started with the Classifiers:
 
-## Image Classifier
-- To run code in the Image classifier, install Anaconda and create a virtual environment in the Anaconda terminal, or create a virtual environment and run
-- pip install jupyter-notebook
-- pip install -r requirements.txt (This should install all the necessary packages required to run the ipynb notebooks)
-- To reproduce the results in the ipynb notebooks, Download the dataset used in this project (https://drive.google.com/file/d/1uyCOBCyoVyBsKcC5df26_qfC8roIatd3/view?usp=sharing) adjust the directories mentioned in the code and run the code from start to end.
-- To run the comet code in the image classifier section. Create a .env file inside the image-classifier folder and define these variables COMET_API_KEY, COMET_PROJECT_NAME, COMET_WORKSPACE_NAME (A comet ml account is required to get these)
-- If just the results need to be reproduced, ignore the comet ml code sections and run the remaining code
-- Link for the datasets used for image emotion classifier (https://drive.google.com/file/d/1uyCOBCyoVyBsKcC5df26_qfC8roIatd3/view?usp=sharing)
-- If the vgg16_v1_mtcnn.ipynb needs to be reproduced. Try to download the mtcnn fer 2013 dataset from the Google Drive link above and run the code except for the notebook cells that contain the preprocess_images function.
+### Image Classifier
+- **Setup:**
+  1. Install Anaconda or create a virtual environment.
+  2. Install dependencies: `pip install -r requirements.txt` (upgrade pip beforehand).
+  3. Download the [required dataset](https://drive.google.com/file/d/1uyCOBCyoVyBsKcC5df26_qfC8roIatd3/view?usp=sharing) and adjust file paths in the code.
+  4. Set up a `.env` file with Comet ML credentials (optional).
+  > **Note**: To reproduce `vgg16_v1_mtcnn.ipynb`, first download the mtcnn fer 2013 dataset from the link above. Then, execute all cells in the notebook, except those containing the preprocess_images function.
 
-## Tracking Results:
-- We are using Comet ML to track our experiments. If you want to track model settings and training/testing results, create an account on Comet ML and get your API key. You can find instructions on how to do that [here](https://www.comet.com/docs/v2/guides/getting-started/quickstart/).
-### For Windows Users:
-- Once you have your API key, run the following commands in a stand-alone PowerShell in the directory where you cloned this repo:
-```bash
-$env:COMET_API_KEY="<your-api-key>"
-$env:COMET_PROJECT_NAME="<your-project-name>"
-```
-- You can now run the code, and it will automatically log your experiments to your project on your Comet account.
-> Note: Some code might directly prompt you to enter your API key. In that case, you can skip the above steps and just enter your API key when prompted.
+### Text Classifier
+- **Google Colab Usage:**
+  - Copy the code from `.ipynb` files in the `text-emotion-classifier` folder to a new Google Colab notebook to run code directly.
+- **Local Setup:**
+  1. Create a virtual environment.
+  2. Install dependencies: `pip install -r requirements.txt` (upgrade pip first).
+  3. Run `main.py`.
+  > **Note**: `cleaning_augmentation` is the only code that needs to be run locally. The rest of the code can be run on Google Colab.
 
-## Workflow
+## Workflow and Contribution Guidelines:
 
-### Before Getting Started
+- **Before Starting:**
+  - Discuss work items in team meetings.
+  - Ensure there's a GitHub issue for the task you're taking on.
 
-- Discuss what you'll be working on in team meetings
-- Make sure there is a GitHub issue in the repo that is tracking the item you're working on
+- **Starting Work:**
+  - Assign yourself to the issue on GitHub.
+  - Sync the latest changes from the `main` branch.
+  - Create and switch to a new branch for your work.
 
-### Get Started on a Work Item
+- **Development Process:**
+  - Commit and push changes frequently, adhering to [Conventional Commits](https://www.conventionalcommits.org/).
+  - Start a pull request early, marking it as a draft.
+  - Write and run unit tests (if applicable).
+  - Resolve merge conflicts promptly.
 
-- On GitHub
-  - Assign yourself to the issue you'll work on (if not already)
-
-- In your local Git repo
-  - Switch to `main` branch (unless otherwise specified)
-  - Sync latest changes on `main` branch (IMPORTANT!!!)
-  - Create and checkout a new branch from `main`
-    - Branch name may start with the issue ID followed by feature, like `10-code-review-doc`
-  - Start coding
-
-### Work on an Item
-
-- Commit and push changes frequently
-  - Please follow [Conventional Commits](https://www.conventionalcommits.org/) for commit messages
-  - Check out the reason behind [Adopting Conventional Commits](/blog/memo-2021-07-21#adopting-conventional-commits)
-
-- Create a pull request on GitHub as early as you make the first commit
-  - Title should start with `Draft:` and followed by the feature, like `Draft: Code Review Doc`
-  - Description should start with a line like `Closes #10` to let GitHub link the issue with the pull request automatically
-
-- Write unit tests while developing new features (if applicable)
-
-- Try to resolve merge conflicts (if any) with the target branch as you notice
-
-### Finish up
-
-- Clean up code
-- Run and pass all related unit tests (if applicable)
-- Remove `Draft:` from title of the pull request
-- Request a code review
-- Wait for review
-- Implement feedbacks (if any) by continue adding commits and request another review
-- Wait for approval and merge
-
+- **Finishing Up:**
+  - Clean and review your code.
+  - Ensure all tests pass.
+  - Finalize the pull request and request code reviews.
+  - Implement review feedbacks and merge upon approval.
