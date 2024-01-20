@@ -1,5 +1,4 @@
-
-# Emotion Classification in Relation to Mental Health 
+# MindMap AI: Emotion Classification in Relation to Mental Health 
 
 Welcome to our project repository for CSCI-567, the Machine Learning graduate course at USC. This repository features advanced models for facial emotion classification in images and emotion classification in text. Dive into our [final report](final_project_report.pdf) for a detailed exploration of our project, including experiments and results.
 > **Note:** For tracking experiments, we use Comet ML. Follow the instructions [here](https://www.comet.com/docs/v2/guides/getting-started/quickstart/) to get an API key. If not using Comet ML, ignore related code sections.
